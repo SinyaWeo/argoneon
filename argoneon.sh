@@ -83,11 +83,11 @@ then
     then
         echo "Installing on Debian/RaspberryPI OS Bullseye"
         pkglist=(raspi-gpio python3-rpi.gpio python3-smbus i2c-tools python3-psutil curl smartmontools)
-    elif $(echo ${pretty_name} | grep -q -F -e 'bookworm' /etc/os-release &> /dev/null); [ $? -eq 0 ]
+    elif echo ${pretty_name} | grep -q "bookworm"
     then
         echo "Installing on Debian/RaspberryPI OS Bookworm"
         pkglist=(raspi-gpio python3-rpi-lgpio python3-smbus i2c-tools python3-psutil curl smartmontools)
-    elif $(echo ${pretty_name} ~ grep -q -F -e 'trixie' /etc/os-release &> /dev/null); [ $? -eq 0 ]
+    elif echo ${pretty_name} | grep -q "trixie"
     then
 	echo 'Installing on Debian/RaspberryPI OS Trixie'
 	pkglist=(python3-rpi.gpio python3-rpi-lgpio python3-smbus i2c-tools python3-psutil curl smartmontools)

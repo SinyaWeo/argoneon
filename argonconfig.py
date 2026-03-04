@@ -8,8 +8,8 @@ CONFIG_FILE='/etc/argoneon.conf'
 #
 def setOLEDDefaults(config):
     """
-    Setup the default settings for the OLED section of the config file.  Instead of
-    having to write code that will process 
+    Setup the default settings for the OLED section of the config file. Fills in
+    missing keys with defaults: screenduration, screensaver, screenlist, and enabled.
     """
     if not 'OLED' in config.keys():
         config['OLED'] = {}
@@ -73,18 +73,16 @@ def loadConfigAndDefaults():
 #
 def loadCPUFanConfig():
     """
-    Load the main configuration and return just the CPUFan portion.  Instead of loading once, and
-    then pulling the CPU configuration out, we load everytime there is a call, this allos us to read
-    in a new file if here is a change.
+    Load the main configuration and return just the CPUFan portion. Configuration is
+    reloaded on every call so that changes to the config file are picked up automatically.
     """
     return loadConfigAndDefaults()['CPUFan']
 
 #
 def loadHDDFanConfig():
     """
-    Load the main configuration and reutrn just the HDDFan portion.  Instead of loading once, and
-    then pulling the HDD configuraiton out, we can load everytime there is a call.  This will allow us
-    to read in changes if they user does so.
+    Load the main configuration and return just the HDDFan portion. Configuration is
+    reloaded on every call so that changes to the config file are picked up automatically.
     """
     return loadConfigAndDefaults()['HDDFan']
 

@@ -97,8 +97,8 @@ def shutdown_check(writeq):
 #
 def get_fanspeed(tempval, configlist):
     """
-    This function converts the corresponding fanspeed for the given temperature the
-    configutation data is a list of strings in the form "<temperature>:<speed>"
+    Returns the corresponding fan speed for the given temperature. The
+    configuration data is a dict mapping temperature thresholds to fan speeds.
     """
     retval = 0
     if len(configlist) > 0:
@@ -157,14 +157,14 @@ def setFanSpeed (overrideSpeed : int = None, instantaneous : bool = True):
             logging.debug( "writing to fan port, speed " + str(newspeed))
             argonsysinfo_recordCurrentFanSpeed( newspeed )
         except IOError:
-            logError( "Error trying o update fan speed.")
+            logError( "Error trying to update fan speed.")
             return prevspeed
     return newspeed
 
 def temp_check():
     """
-    Main thread for processing the temperature check functonality.  We just try and set the fan speed once
-    a minute.  However we do want to start with the fan *OFF*.
+    Main thread for processing the temperature check functionality. Sets fan speed once
+    a minute. Starts with the fan off.
     """
     setFanOff()
     while True:
