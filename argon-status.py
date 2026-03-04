@@ -276,7 +276,7 @@ def show_all(show_list):
 #
 def show_memory():
     """
-    Display currnent memory utilization
+    Display current memory utilization
     """
     memory = argonsysinfo_getram()
 
@@ -288,7 +288,7 @@ def show_memory():
 #
 def print_version():
     """ 
-    Display the version of we are currently running
+    Display the version currently running
     """
     print( 'Currently running version: ' + ARGON_VERSION )
 

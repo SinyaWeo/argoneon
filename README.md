@@ -1,13 +1,15 @@
 ﻿# Argon-EON
+
 This repository contains modifications to the code distributed by Argon40 (www.argon40.com) for their EON product
 
 ## Supported OS Versions
 
-Currently supports 32 and 64 bit versions of Raspberry PI OS, as well as:
-
-- Ubuntu 21.04, 21.10, 22.04 and 23.04
-- DietPi 64 bit Bullseye based.  Make sure you have enabled I2C, and have rebooted the system.
-- Manjaro Linux support has been added.
+| OS | Versions | Notes |
+|----|----------|-------|
+| Raspberry Pi OS / Raspbian | Bullseye, Bookworm, Trixie | 32 and 64 bit |
+| Ubuntu | 21.04, 21.10, 22.04, 23.04, 24.04 | |
+| DietPi | Bullseye-based (64 bit) | Enable I2C and reboot before installing |
+| Manjaro | Current | Requires `yay` AUR helper |
 
 ## Differences from Argon40's Scripts
 

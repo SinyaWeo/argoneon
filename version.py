@@ -2,5 +2,5 @@
 # Version number
 #
 
-ARGON_VERSION = "2024.10.09"
+ARGON_VERSION = "2026.03.04"
 
